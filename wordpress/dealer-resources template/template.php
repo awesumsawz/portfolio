@@ -16,10 +16,10 @@ $components = new dealerResources;
 ?>
 <main id="body-container" class="dealer-resources <?php echo $page_class ?>">
 
-  <section class="dealer-resources__banner" style="background-image: url('<?php echo get_field('image'); ?>')">
+  <section class="dealer-resources__banner" style="background-image: url('<?php echo get_field('dealership_banner_image'); ?>')">
     <div class="content-wrapper">
       <div class="logo">
-        <img src="http://localhost:9082/wp-content/uploads/2022/03/new_logo.png" alt="McGrath Honda Logo">
+        <img src="<?php echo get_field( 'dealership_logo' ) ?>" alt="Dealership Logo">
       </div>
       <div class="title">
         <h1><?php the_title() ?></h1>
@@ -27,15 +27,17 @@ $components = new dealerResources;
       <div class="completion">
         <?php echo $components->completePercentageBuilder(); ?>
       </div>
-      <div class="description">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna
-          aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-          aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim
-          id est laborum.
-        </p>
-      </div>
+      <?php
+      if ( !empty( the_content() ) )
+      {
+        ?>
+        <div class="description">
+          <p><?php the_content() ?></p>
+        </div>
+        <?php
+      }
+      ?>
+
     </div>
     <div class="gradient-overlay__opaque-transparent"></div>
   </section>
@@ -45,6 +47,5 @@ $components = new dealerResources;
   </section>
 
 </main>
-
 
 <?php get_footer(); ?>
