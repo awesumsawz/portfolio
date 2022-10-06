@@ -414,6 +414,7 @@ class dealerResources
    */
   private function childCardBuilder( $child_obj ): string
   {
+    $output = "";
     $permalink = get_permalink( $child_obj->ID );
 
     if ( empty( $background_image_url = get_field( "image", $child_obj->ID ) ) )
@@ -422,10 +423,10 @@ class dealerResources
     }
 
     // CARD
-    $output = "<div class=\"topic-card\">";
+    $output .= "<div class=\"topic-card\">";
 
     if ( $this->getTopicType( $child_obj->ID ) == "link" )
-    // if the topic page is based on the redirect template
+      // if the topic page is based on the redirect template
     {
       // open it in a new tab
       $output .=  "<a href=\"$permalink\" target='_blank'>";
@@ -488,14 +489,24 @@ class dealerResources
    */
   public function topicGridBuilder(): string
   {
-    $children = get_children(  self::$page_object->ID );
+    $children = get_pages( array(
+      'child_of' => self::$page_object->ID,
+      'parent' => self::$page_object->ID,
+      'sort_column' => 'menu_order',
+      'sort_order' => 'ASC'
+    ) );
 
     // Child pages w/o descendants
     $output = "<div class='grid-section'>";
       $output .= "<div class='topic-grid wo-children'>";
       foreach ( $children as $child )
       {
-        $descendants = get_pages( array( 'child_of' => $child->ID ) );
+        $descendants = get_pages( array(
+          'child_of' => $child->ID,
+          'parent' => $child->ID,
+          'sort_column' => 'menu_order',
+          'sort_order' => 'ASC'
+        ) );
         // if the child is not a parent
         if ( !$descendants )
         {
