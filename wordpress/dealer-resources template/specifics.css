@@ -1,0 +1,284 @@
+/* ****************************************************************************
+ * SPECIFIC STYLES - INDEX
+ * ****************************************************************************
+ *
+ * ****************************************************************************
+ * Notes:
+ * ****************************************************************************
+ * ----------------------------------------------------------------------------
+ * - The media queries are set using em due to the research found at time of
+ *   build that claims em is the most easy to parse measurement for MQs.
+ * - Ems are up to 6 decimals long because again, research found at time of
+ *   build claimed that to be the most accurate way to define max-widths
+ * - source: https://engageinteractive.co.uk/blog/em-vs-rem-vs-px
+ * - source: https://zellwk.com/blog/media-query-units/
+ * ****************************************************************************
+ */
+
+
+
+/* ****************************************************************************
+ * .0 Dealer Resources Template
+ * ****************************************************************************
+ * Styles associated with the Dealer Resources Template
+ * ----------------------------------------------------------------------------
+ */
+ main#body-container.dealer-resources {
+  padding-top: var(--body-padding-val);
+  padding-bottom: var(--spacing-standard);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-standard);
+}
+/**
+ * banner
+ * ----------------------------------------------------------------------------
+ */
+.dealer-resources__banner {
+  padding: var(--spacing-standard);
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* content */
+.dealer-resources__banner > .content-wrapper {
+  max-width: var(--max-width-standard);
+  margin-inline: auto;
+  position: relative;
+  z-index: var(--z-index-mid);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-standard);
+}
+.dealer-resources__banner > .content-wrapper > * {
+  max-width: 45rem;
+}
+.dealer-resources__banner img {
+  display: block;
+  margin-inline: auto;
+  max-height: 15rem;
+}
+.dealer-resources__banner h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 0;
+  line-height: 1;
+}
+.dealer-resources__banner p {
+  margin: 0;
+}
+
+/* content -- completion */
+.dealer-resources__banner .completion {
+  font-family: "Titillium Web", "Proxima Nova", sans-serif;
+  text-transform: uppercase;
+}
+.dealer-resources__banner .completion .full-bar {
+  height: 0.5rem;
+  background-color: var(--light-gray);
+  margin-top: 0.5rem;
+}
+.dealer-resources__banner .completion .full-bar .completion-bar {
+  height: 100%;
+  background-color: var(--mid-gray);
+}
+
+/* overlay */
+.gradient-overlay__opaque-transparent {
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    var(--navy-overlay-100) 0%,
+    var(--navy-overlay-95) 50%,
+    var(--navy-overlay-0) 150%
+  );
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-index-bottom);
+}
+@media only screen and (max-width: 48em) {
+  .gradient-overlay__opaque-transparent {
+    background: linear-gradient(
+      90deg,
+      var(--navy-overlay-100) 0%,
+      var(--navy-overlay-95) 70%,
+      var(--navy-overlay-0) 170%
+    );
+  }
+}
+@media only screen and (max-width: 36em) {
+  .gradient-overlay__opaque-transparent {
+    background: linear-gradient(
+      var(--navy-overlay-100) 0%,
+      var(--navy-overlay) 30%
+    );
+  }
+}
+
+/**
+ * Grid
+ * ----------------------------------------------------------------------------
+ */
+.dealer-resources__topic-grid {
+  max-width: var(--max-width-standard);
+  margin-inline: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-standard);
+}
+.dealer-resources__topic-grid .topic-grid__title {
+  text-align: center;
+}
+.dealer-resources__topic-grid .topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-standard);
+  margin-inline: 2rem;
+}
+@media only screen and (max-width: 48em) {
+  .dealer-resources__topic-grid .topic-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 36em) {
+  .dealer-resources__topic-grid .topic-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.dealer-resources__topic-grid .topic-card {
+  width: 100%;
+  background-color: var(--navy);
+}
+.dealer-resources__topic-grid .topic-card a {
+  text-decoration: none;
+  color: initial;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 15rem auto;
+}
+@media only screen and (max-width: 36em) {
+  .dealer-resources__topic-grid .topic-card a {
+    position: relative;
+    grid-template-columns: 8rem 1fr;
+    grid-template-rows: auto;
+  }
+}
+/* top */
+.dealer-resources__topic-grid .topic-card .top {
+  min-height: 15rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: var(--white);
+}
+@media only screen and (max-width: 36rem) {
+  .dealer-resources__topic-grid .topic-card .top {
+    min-height: 10rem;
+  }
+}
+.dealer-resources__topic-grid .topic-card .card-tags,
+.dealer-resources__topic-grid .topic-card .card-info {
+  z-index: var(--z-index-mid);
+  position: absolute;
+  display: flex;
+  gap: var(--spacing-narrow);
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 36em) {
+  .dealer-resources__topic-grid .topic-card .card-info,
+  .dealer-resources__topic-grid .topic-card .card-tags {
+    visibility: hidden;
+  }
+}
+
+.dealer-resources__topic-grid .topic-card .card-info.mobile,
+.dealer-resources__topic-grid .topic-card .card-tags.mobile {
+  visibility: hidden;
+}
+@media only screen and (max-width: 36em) {
+  .dealer-resources__topic-grid .topic-card .card-info.mobile,
+  .dealer-resources__topic-grid .topic-card .card-tags.mobile {
+    visibility: visible;
+  }
+  .dealer-resources__topic-grid .topic-card .card-info.mobile {
+    top: 1rem;
+    bottom: unset;
+  }
+}
+
+.dealer-resources__topic-grid .topic-card .card-tags {
+  top: 1rem;
+  left: -0.5rem;
+  font-family: var(--font-display);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: var(--small-size);
+}
+.dealer-resources__topic-grid .topic-card .card-tags .tag {
+  padding: var(--spacing-xnarrow) var(--spacing-narrow);
+  background-color: var(--mid-gray);
+}
+.dealer-resources__topic-grid .topic-card .card-tags .tag.new,
+.dealer-resources__topic-grid .topic-card .card-tags .tag.updated {
+  background-color: var(--green);
+}
+.dealer-resources__topic-grid .topic-card .card-tags .tag.featured {
+  background-color: var(--blue);
+}
+.dealer-resources__topic-grid .topic-card .card-tags .tag.essential {
+  background-color: var(--red);
+}
+.dealer-resources__topic-grid .topic-card .card-info {
+  bottom: 0;
+  right: var(--spacing-xnarrow);
+  justify-content: start;
+  align-items: start;
+  padding: var(--spacing-xnarrow);
+}
+.dealer-resources__topic-grid .topic-card .card-info .icon > * {
+  font-size: 2rem;
+  line-height: 1;
+}
+.dealer-resources__topic-grid .topic-card .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--navy-overlay);
+  z-index: var(--z-index-bottom);
+}
+.dealer-resources__topic-grid .topic-card a:hover .card-overlay {
+  background-color: var(--dark-overlay);
+}
+/* bottom */
+.dealer-resources__topic-grid .topic-card .bottom {
+  padding: var(--spacing-narrow);
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-narrow);
+  align-items: center;
+}
+@media only screen and (max-width: 36em) {
+  .dealer-resources__topic-grid .topic-card .bottom {
+    padding-block: 5rem;
+  }
+}
+.dealer-resources__topic-grid .topic-card .bottom iconify-icon {
+  font-size: 2rem;
+}
+.dealer-resources__topic-grid .topic-card h3 {
+  font-size: 2rem;
+  margin: 0;
+  line-height: 1;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}

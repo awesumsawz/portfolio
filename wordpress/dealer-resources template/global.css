@@ -1,0 +1,400 @@
+/* ****************************************************************************
+ * GLOBAL STYLES - INDEX
+ * ****************************************************************************
+ * .0 - ROOT VARIABLES
+ * .0 - FONT IMPORTS
+ * .0 - GLOBAL ADJUSTMENTS
+ * .0 - FONT STYLES
+ * ****************************************************************************
+ * Notes:
+ * ----------------------------------------------------------------------------
+ * - Broke globals out into its own file for easier reference during development
+ * ****************************************************************************
+ * ****************************************************************************
+ * Break Points:
+ * ----------------------------------------------------------------------------
+ * - XXL  1400px  87.5em
+ * - XL   1200px  75em
+ * - LG   992px   62em
+ * - MD   768px   48em
+ * - SM   576px   36em
+ * - XS   384px   24em
+ * ****************************************************************************
+ * ****************************************************************************
+ * .0 ROOT VARIABLES
+ * ****************************************************************************
+ * Pre-defined variables to be used across the site. Easy access to standards.
+ * ----------------------------------------------------------------------------
+ */
+ :root {
+  /* COLORS */
+  --blue: #53aacc; /* brand-defined */
+  --hover-blue: #3a7b94; /* from di website */
+  --green: #33ac41; /* brand-defined */
+  --hover-green: #225219; /* from di website */
+  --red: #d44141; /* New */
+  --hover-red: #a24141;
+
+  --navy: #1d1b2c;
+  --light-blue: #ecf5fd;
+
+  --white: #ffffff;
+  --lighter-gray: #f4f7f8; /* brand-defined */
+  --light-gray: #e5e5e5;
+  --mid-gray: #979797;
+  --dark-gray: #3f3f3f; /* brand-defined */
+  --black: #222222; /* brand-defined */
+  --true-black: #000000;
+
+  /* OVERLAY COLORS */
+  --dark-overlay: rgba(0, 0, 0, 60%);
+  --navy-overlay-100: rgba(29, 27, 44, 100%);
+  --navy-overlay-95: rgba(29, 27, 44, 95%);
+  --navy-overlay-90: rgba(29, 27, 44, 90%);
+  --navy-overlay: rgba(29, 27, 44, 80%);
+  --navy-overlay-0: rgba(29, 27, 44, 0%);
+
+  /* SPACING */
+  --spacing-narrowest: 0rem;
+  --spacing-xnarrow: 0.5rem;
+  --spacing-narrow: 1rem;
+  --spacing-standard: 2rem;
+  --spacing-wide: 3rem;
+  --spacing-xwide: 3.5rem;
+  --spacing-widest: 4rem;
+  --margin-narrow: var(--spacing-narrow);
+  --margin-standard: var(--spacing-standard);
+  --margin-wide: var(--spacing-wide);
+  --padding-narrow: var(--spacing-narrow);
+  --padding-standard: var(--spacing-standard);
+  --padding-wide: var(--spacing-wide);
+
+  /* button padding */
+  --padding-button-standard: 1rem 2rem;
+
+  /* Max-Width Vars */
+  --max-width-widest: 150rem;
+  --max-width-xwide: 140rem;
+  --max-width-wide: 120rem;
+  --max-width-standard: 100rem;
+  --max-width-narrow: 80rem;
+  --max-width-xnarrow: 60rem;
+  --max-width-narrowest: 50rem;
+
+  /* FONT SETTINGS */
+  --font-display: "Titillium Web", "Proxima Nova", sans-serif;
+  --font-standard: "Proxima Nova", sans-serif;
+
+  --h1-size: 4rem;
+  --h2-size: 3.4rem;
+  --h3-size: 2.8rem;
+  --h4-size: 2.4rem;
+  --h5-size: 2rem;
+  --h6-size: 1.8rem;
+  --p-size: 1.4rem;
+  --small-size: 1.2rem;
+  --smallest-size: 1rem;
+
+  --h1-weight: bold;
+  --h2-weight: bold;
+  --h3-weight: bold;
+  --h4-weight: normal;
+  --h5-weight: normal;
+  --h6-weight: normal;
+  --p-weight: normal;
+
+  --h1-margin: 1rem 0;
+  --h2-margin: 1rem 0;
+  --h3-margin: 1rem 0;
+  --h4-margin: 1rem 0;
+  --h5-margin: 1rem 0;
+  --h6-margin: 1rem 0;
+  --p-margin: 1rem 0;
+
+  --h1-line-height: 1.2;
+  --h2-line-height: 1.2;
+  --h3-line-height: 1.2;
+  --h4-line-height: 1.2;
+  --h5-line-height: 1.2;
+  --h6-line-height: 1.2;
+  --p-line-height: 1.5;
+
+  --z-index-top: 1000;
+  --z-index-highest: 999;
+  --z-index-xhigh: 700;
+  --z-index-high: 500;
+  --z-index-mid: 300;
+  --z-index-low: 100;
+  --z-index-bottom: 50;
+  --z-index-buried: -1;
+
+  /* misc */
+  --body-padding-val: 5.6rem;
+  --blur-standard: blur(3px);
+}
+
+/* ****************************************************************************
+ * .0 FONT IMPORTS
+ * ****************************************************************************
+ * Import fonts for use in font styles
+ * ----------------------------------------------------------------------------
+ */
+
+/* PROXIMA NOVA */
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/ProximaNova-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/ProximaNova-Regular.woff") format("woff"),
+    url("../fonts/ProximaNova-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova-Light.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/ProximaNova-Light.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/ProximaNova-Light.woff") format("woff"),
+    url("../fonts/ProximaNova-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova-SemiBold.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/ProximaNova-SemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/ProximaNova-SemiBold.woff") format("woff"),
+    url("../fonts/ProximaNova-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova-Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/ProximaNova-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/ProximaNova-Bold.woff") format("woff"),
+    url("../fonts/ProximaNova-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* TITILLIUM WEB */
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../fonts/TitilliumWeb-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../fonts/TitilliumWeb-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../fonts/TitilliumWeb-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../fonts/TitilliumWeb-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../fonts/TitilliumWeb-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../fonts/TitilliumWeb-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+/* italic */
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../fonts/TitilliumWeb-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../fonts/TitilliumWeb-ExtraLightItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../fonts/TitilliumWeb-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../fonts/TitilliumWeb-SemiboldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../fonts/TitilliumWeb-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* ****************************************************************************
+ * .0 GLOBAL ADJUSTMENTS
+ * ****************************************************************************
+ * Slightly more specific changes that apply across the site
+ * ----------------------------------------------------------------------------
+ */
+html {
+  font-size: 62.5%;
+  /*background-color: var(--navy);*/
+}
+html body {
+  color: var(--true-black);
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 1.4rem;
+  /*background-color: var(--white);*/
+}
+main#body-container {
+  /* Fixes the gap beneath the fixed header bar at the top of the page. If this is changed later use "calc( var(--body-padding-val) + x" where x is however much padding should be added */
+  padding-top: calc(var(--body-padding-val) + var(--spacing-standard));
+}
+section#main-content {
+  max-width: var(--max-width-standard);
+  padding-inline: var(--spacing-standard);
+  margin-inline: auto;
+}
+/*section#main-content .entry * {*/
+/*  margin-bottom: var(--spacing-standard);*/
+/*}*/
+
+/* ****************************************************************************
+ * .0 GRAVITY FORMS ADJUSTMENTS
+ * ****************************************************************************
+ * ----------------------------------------------------------------------------
+ */
+/*section#main-content .entry .gform_wrapper * {*/
+/*  margin-bottom: initial;*/
+/*}*/
+.gform_wrapper .gform_button.button {
+  background-color: var(--blue);
+  color: var(--white);
+  font-family: "Titillium Web", "Proxima Nova", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 0;
+  padding: 1rem 2rem;
+  margin-inline: auto;
+  width: 100%;
+}
+#gform_submit_button_2.gform_button.button {
+  max-width: 25rem;
+}
+.gform_wrapper .gform_button.button:hover {
+  background-color: var(--hover-blue);
+}
+.gform_confirmation_message {
+  margin-bottom: var(--spacing-standard);
+}
+
+/* ****************************************************************************
+	 * .0 FONT STYLES
+	 * ****************************************************************************
+	 * Styles that impact headers and body appearance
+	 * ----------------------------------------------------------------------------
+	 */
+html body h1 {
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  line-height: var(--h1-line-height);
+  margin: var(--h1-margin);
+  padding: 0;
+  font-family: "Titillium Web", "Proxima Nova", sans-serif;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 24em) {
+  html body h1 {
+    font-size: var(--h2-size);
+  }
+}
+
+html body h2 {
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  line-height: var(--h2-line-height);
+  margin: var(--h2-margin);
+  padding: 0;
+  font-family: "Titillium Web", "Proxima Nova", sans-serif;
+  text-transform: uppercase;
+}
+
+html body h3 {
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  line-height: var(--h3-line-height);
+  margin: var(--h3-margin);
+  padding: 0;
+  font-family: "Proxima Nova", sans-serif;
+}
+
+html body h4 {
+  font-size: var(--h4-size);
+  font-weight: var(--h4-weight);
+  line-height: var(--h4-line-height);
+  margin: var(--h4-margin);
+  padding: 0;
+  font-family: "Proxima Nova", sans-serif;
+}
+
+html body h5 {
+  font-size: var(--h5-size);
+  font-weight: var(--h5-weight);
+  line-height: var(--h5-line-height);
+  margin: var(--h5-margin);
+  padding: 0;
+  font-family: "Proxima Nova", sans-serif;
+}
+
+html body h6 {
+  font-size: var(--h6-size);
+  font-weight: var(--h6-weight);
+  line-height: var(--h6-line-height);
+  margin: var(--h6-margin);
+  padding: 0;
+  font-family: "Proxima Nova", sans-serif;
+}
+
+html body p {
+  font-size: var(--p-size);
+  font-weight: var(--p-weight);
+  line-height: var(--p-line-height);
+  margin: var(--p-margin);
+  padding: 0;
+  font-family: "Proxima Nova", sans-serif;
+}
+
+/* ****************************************************************************
+ * .0 WORDPRESS FIXES
+ * ****************************************************************************
+ * Styles fix issues created by wordpress
+ * ----------------------------------------------------------------------------
+ */
+@media screen and (max-width: 600px) {
+  #wpadminbar {
+    position: fixed;
+  }
+}
