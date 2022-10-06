@@ -333,7 +333,6 @@ class dealerResources
   {
     $topic_length = $this->getTopicLength( $topic_id );
 
-
     $compareToSixty = $topic_length/60;
 
     if ( $compareToSixty < 1 )
@@ -367,15 +366,15 @@ class dealerResources
       }
     }
 
-    if ( $topic_length = 0 )
-    // if topic length is 0, define $length_string as null to identify links and undefined topic types
-    {
-      $length_string = NULL;
-    }
-    else
-    // if topic length exists, add together $topic_length and $unit to define $length_string
+    if ( $topic_length > 0 )
+    // if topic length is greater than 0, add together $topic_length and $unit to define $length_string
     {
       $length_string = $topic_length . $unit;
+    }
+    else
+    // Otherwise, define $length_string as null to identify links and undefined topic types
+    {
+      $length_string = NULL;
     }
 
     return $length_string;
