@@ -19,7 +19,7 @@ $components = new dealerResources;
   <section class="dealer-resources__banner" style="background-image: url('<?php echo get_field('dealership_banner_image'); ?>')">
     <div class="content-wrapper">
       <div class="logo">
-        <img src="<?php echo get_field( 'dealership_logo' ) ?>" alt="Dealership Logo">
+        <?php echo $components->logoBuilder(); ?>
       </div>
       <div class="title">
         <h1><?php the_title() ?></h1>

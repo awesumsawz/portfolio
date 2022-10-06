@@ -72,7 +72,12 @@ class dealerResources
     $total_count = 0;
     $complete_count = 0;
 
-    $children = get_children( $page_id );
+    $children = get_pages( array(
+      'child_of' => $page_id,
+      'parent' => $page_id,
+      'sort_column' => 'menu_order',
+      'sort_order' => 'ASC'
+    ) );
 
     foreach ( $children as $child )
     // run through each child of the $page_id
@@ -563,6 +568,38 @@ class dealerResources
     $output .=      "<div class='completion-bar' style='width: $completePercentage%'></div>";
     $output .=    "</div>";
     $output .=  "</div>";
+
+    return $output;
+  }
+
+  /**
+   * LOGO BUILDER
+   *
+   * Builds the logo for the header of dealer resource pages. Allows for the insertion of color into the backgrounds
+   * of transparent logos.
+   *
+   * @return string
+   * @since v2022.09.1.0
+   */
+  public function logoBuilder(): string
+  {
+    $output = "";
+
+    $logo_url = get_field( "dealership_logo", self::$page_object->ID );
+    $include_background = get_field( "dealership_logo_add_background", self::$page_object->ID );
+    $background_color= htmlspecialchars(get_field( "dealership_logo_background_color", self::$page_object->ID ));
+
+    if ( !empty($logo_url) )
+    // if the page includes a logo
+    {
+      $output .= "<img src=\"$logo_url\" ";
+      if ( $include_background )
+      // if the logo should have a background
+      {
+        $output .= "style=\"padding: 2rem; background: $background_color\" ";
+      }
+      $output .= "alt=\"Dealership Logo\">";
+    }
 
     return $output;
   }
