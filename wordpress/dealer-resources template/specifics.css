@@ -258,6 +258,7 @@
 .dealer-resources__topic-grid .topic-card a:hover .card-overlay {
   background-color: var(--dark-overlay);
 }
+
 /* bottom */
 .dealer-resources__topic-grid .topic-card .bottom {
   padding: var(--spacing-narrow);
@@ -274,6 +275,9 @@
 }
 .dealer-resources__topic-grid .topic-card .bottom iconify-icon {
   font-size: 2rem;
+}
+.dealer-resources__topic-grid .topic-card .bottom .link-completion.hidden {
+  display: none;
 }
 .dealer-resources__topic-grid .topic-card h3 {
   font-size: 2rem;
